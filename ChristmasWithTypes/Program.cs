@@ -1,34 +1,26 @@
-﻿using System;
-
-namespace ChristmasWithTypes
+﻿namespace ChristmasWithTypes
 {
     class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
-            var xmas = new Christmas();
+            Christmas christmas = new Christmas();
 
-            var xmasDay = Christmas.Day.Thursday;
+            var xMasDay = Christmas.Day.Thursday; 
+            christmas.TreeHeight = 10;
+            christmas.Presents = new string [3] { "Xbox", "Nintendo Switch", "iPhone X"};
+            christmas.Santa = "Kris Kringle";
 
-            //TODO set Santa's name to Kris Kringle
-            xmas.Santa = null;
+            Console.WriteLine($"This year Christmas falls on {xMasDay}");
+            Console.WriteLine($"Our tree will be {christmas.TreeHeight} feet high");
+            Console.WriteLine("Here are the presents we would like: " + string.Join(" ", christmas.Presents));
+            Console.WriteLine($"We would like to call Santa, {christmas.Santa}");
 
-            //TODO Insert 3 presents you would like for xmas.  They must be strings
-            xmas.Presents =  new string[3]{ }; 
-
-            //TODO Set the TreeHeight to 10
-            xmas.TreeHeight = null;
-
-            Console.WriteLine($"This year christmas falls on {xmasDay} \n");
-            Console.WriteLine($"Our tree will be {xmas.TreeHeight} feet high \n");
-            Console.WriteLine("Here are the presents we would like:");
-
-            foreach (var present in xmas.Presents)
-            {
-                Console.WriteLine($"    {present}");
-            }
-
-            Console.WriteLine($"\n We like to call Santa, {xmas.Santa}");
+            Console.WriteLine("Press any key to continue..."); // Added this line
+            Console.ReadKey();
         }
     }
 }
+        
+   
+
